@@ -1,0 +1,101 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\pperkins\OneDrive - London Business School\Desktop\Metrics\PS2\PS2 log sub.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}29 Oct 2022, 15:26:11
+
+{com}. rename ed0 educ
+{res}
+{com}. rename a0 age
+{res}
+{com}. rename w0 wage
+{res}
+{com}. gen lwage = log( wage)
+
+.  gen exper = age-( educ+6)
+
+. xi: regress lwage i.educ i.exper
+{txt}i.educ{col 19}_Ieduc_1-20{col 39}(naturally coded; _Ieduc_1 omitted)
+i.exper{col 19}_Iexper_0-25{col 39}(naturally coded; _Iexper_0 omitted)
+{p 0 6 2}note: {bf:_Ieduc_4} omitted because of collinearity.{p_end}
+{p 0 6 2}note: {bf:_Iexper_21} omitted because of collinearity.{p_end}
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}     1,500
+{txt}{hline 13}{c +}{hline 34}   F(38, 1461)     = {res}     4.84
+{txt}       Model {c |} {res}  120.51989        38  3.17157606   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 958.303827     1,461  .655923222   {txt}R-squared       ={res}    0.1117
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0886
+{txt}       Total {c |} {res} 1078.82372     1,499  .719695609   {txt}Root MSE        =   {res} .80989
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}       lwage{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}_Ieduc_3 {c |}{col 14}{res}{space 2}-1.157453{col 26}{space 2} 1.145359{col 37}{space 1}   -1.01{col 46}{space 3}0.312{col 54}{space 4}-3.404176{col 67}{space 3}  1.08927
+{txt}{space 4}_Ieduc_4 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 4}_Ieduc_6 {c |}{col 14}{res}{space 2}-.9445529{col 26}{space 2} 1.775113{col 37}{space 1}   -0.53{col 46}{space 3}0.595{col 54}{space 4}-4.426595{col 67}{space 3} 2.537489
+{txt}{space 4}_Ieduc_7 {c |}{col 14}{res}{space 2}-2.152597{col 26}{space 2} 1.760253{col 37}{space 1}   -1.22{col 46}{space 3}0.222{col 54}{space 4}-5.605489{col 67}{space 3} 1.300295
+{txt}{space 4}_Ieduc_8 {c |}{col 14}{res}{space 2}-1.186395{col 26}{space 2} 1.669338{col 37}{space 1}   -0.71{col 46}{space 3}0.477{col 54}{space 4} -4.46095{col 67}{space 3} 2.088161
+{txt}{space 4}_Ieduc_9 {c |}{col 14}{res}{space 2}-1.275546{col 26}{space 2} 1.663137{col 37}{space 1}   -0.77{col 46}{space 3}0.443{col 54}{space 4}-4.537937{col 67}{space 3} 1.986845
+{txt}{space 3}_Ieduc_10 {c |}{col 14}{res}{space 2}-1.023139{col 26}{space 2} 1.662686{col 37}{space 1}   -0.62{col 46}{space 3}0.538{col 54}{space 4}-4.284646{col 67}{space 3} 2.238367
+{txt}{space 3}_Ieduc_11 {c |}{col 14}{res}{space 2}-1.186562{col 26}{space 2} 1.660854{col 37}{space 1}   -0.71{col 46}{space 3}0.475{col 54}{space 4}-4.444475{col 67}{space 3}  2.07135
+{txt}{space 3}_Ieduc_12 {c |}{col 14}{res}{space 2}-.9881903{col 26}{space 2} 1.656787{col 37}{space 1}   -0.60{col 46}{space 3}0.551{col 54}{space 4}-4.238125{col 67}{space 3} 2.261744
+{txt}{space 3}_Ieduc_13 {c |}{col 14}{res}{space 2}-.8853558{col 26}{space 2} 1.657511{col 37}{space 1}   -0.53{col 46}{space 3}0.593{col 54}{space 4}-4.136712{col 67}{space 3}    2.366
+{txt}{space 3}_Ieduc_14 {c |}{col 14}{res}{space 2}-.6686956{col 26}{space 2} 1.657212{col 37}{space 1}   -0.40{col 46}{space 3}0.687{col 54}{space 4}-3.919465{col 67}{space 3} 2.582074
+{txt}{space 3}_Ieduc_15 {c |}{col 14}{res}{space 2}-.6759231{col 26}{space 2} 1.658223{col 37}{space 1}   -0.41{col 46}{space 3}0.684{col 54}{space 4}-3.928675{col 67}{space 3} 2.576828
+{txt}{space 3}_Ieduc_16 {c |}{col 14}{res}{space 2}-.1841238{col 26}{space 2}  1.65618{col 37}{space 1}   -0.11{col 46}{space 3}0.911{col 54}{space 4}-3.432868{col 67}{space 3} 3.064621
+{txt}{space 3}_Ieduc_17 {c |}{col 14}{res}{space 2}-.1660085{col 26}{space 2} 1.659836{col 37}{space 1}   -0.10{col 46}{space 3}0.920{col 54}{space 4}-3.421924{col 67}{space 3} 3.089907
+{txt}{space 3}_Ieduc_18 {c |}{col 14}{res}{space 2}-.2080898{col 26}{space 2} 1.661718{col 37}{space 1}   -0.13{col 46}{space 3}0.900{col 54}{space 4}-3.467697{col 67}{space 3} 3.051517
+{txt}{space 3}_Ieduc_19 {c |}{col 14}{res}{space 2}  .280479{col 26}{space 2} 1.667019{col 37}{space 1}    0.17{col 46}{space 3}0.866{col 54}{space 4}-2.989527{col 67}{space 3} 3.550485
+{txt}{space 3}_Ieduc_20 {c |}{col 14}{res}{space 2}-.0123205{col 26}{space 2} 1.619782{col 37}{space 1}   -0.01{col 46}{space 3}0.994{col 54}{space 4}-3.189667{col 67}{space 3} 3.165026
+{txt}{space 3}_Iexper_1 {c |}{col 14}{res}{space 2}-.2269802{col 26}{space 2}   .94633{col 37}{space 1}   -0.24{col 46}{space 3}0.810{col 54}{space 4}-2.083291{col 67}{space 3}  1.62933
+{txt}{space 3}_Iexper_2 {c |}{col 14}{res}{space 2}-.1065176{col 26}{space 2} .9183523{col 37}{space 1}   -0.12{col 46}{space 3}0.908{col 54}{space 4}-1.907947{col 67}{space 3} 1.694912
+{txt}{space 3}_Iexper_3 {c |}{col 14}{res}{space 2}-.0676252{col 26}{space 2} .8908085{col 37}{space 1}   -0.08{col 46}{space 3}0.939{col 54}{space 4}-1.815025{col 67}{space 3} 1.679775
+{txt}{space 3}_Iexper_4 {c |}{col 14}{res}{space 2} .1893041{col 26}{space 2} .8878742{col 37}{space 1}    0.21{col 46}{space 3}0.831{col 54}{space 4} -1.55234{col 67}{space 3} 1.930948
+{txt}{space 3}_Iexper_5 {c |}{col 14}{res}{space 2} .0618494{col 26}{space 2} .8840833{col 37}{space 1}    0.07{col 46}{space 3}0.944{col 54}{space 4}-1.672359{col 67}{space 3} 1.796058
+{txt}{space 3}_Iexper_6 {c |}{col 14}{res}{space 2} .1462151{col 26}{space 2} .8808946{col 37}{space 1}    0.17{col 46}{space 3}0.868{col 54}{space 4}-1.581738{col 67}{space 3} 1.874168
+{txt}{space 3}_Iexper_7 {c |}{col 14}{res}{space 2} .3489866{col 26}{space 2}  .881511{col 37}{space 1}    0.40{col 46}{space 3}0.692{col 54}{space 4}-1.380176{col 67}{space 3} 2.078149
+{txt}{space 3}_Iexper_8 {c |}{col 14}{res}{space 2} .4058707{col 26}{space 2} .8824801{col 37}{space 1}    0.46{col 46}{space 3}0.646{col 54}{space 4}-1.325193{col 67}{space 3} 2.136934
+{txt}{space 3}_Iexper_9 {c |}{col 14}{res}{space 2} .3210455{col 26}{space 2} .8822642{col 37}{space 1}    0.36{col 46}{space 3}0.716{col 54}{space 4}-1.409594{col 67}{space 3} 2.051685
+{txt}{space 2}_Iexper_10 {c |}{col 14}{res}{space 2} .4754645{col 26}{space 2} .8827121{col 37}{space 1}    0.54{col 46}{space 3}0.590{col 54}{space 4}-1.256054{col 67}{space 3} 2.206983
+{txt}{space 2}_Iexper_11 {c |}{col 14}{res}{space 2} .4560423{col 26}{space 2} .8829676{col 37}{space 1}    0.52{col 46}{space 3}0.606{col 54}{space 4}-1.275977{col 67}{space 3} 2.188062
+{txt}{space 2}_Iexper_12 {c |}{col 14}{res}{space 2} .5263969{col 26}{space 2} .8834978{col 37}{space 1}    0.60{col 46}{space 3}0.551{col 54}{space 4}-1.206663{col 67}{space 3} 2.259456
+{txt}{space 2}_Iexper_13 {c |}{col 14}{res}{space 2}   .50351{col 26}{space 2} .8843844{col 37}{space 1}    0.57{col 46}{space 3}0.569{col 54}{space 4}-1.231289{col 67}{space 3} 2.238309
+{txt}{space 2}_Iexper_14 {c |}{col 14}{res}{space 2} .5861553{col 26}{space 2} .8854906{col 37}{space 1}    0.66{col 46}{space 3}0.508{col 54}{space 4}-1.150813{col 67}{space 3} 2.323124
+{txt}{space 2}_Iexper_15 {c |}{col 14}{res}{space 2} .7240721{col 26}{space 2} .8890811{col 37}{space 1}    0.81{col 46}{space 3}0.416{col 54}{space 4} -1.01994{col 67}{space 3} 2.468084
+{txt}{space 2}_Iexper_16 {c |}{col 14}{res}{space 2}  .623288{col 26}{space 2} .9179091{col 37}{space 1}    0.68{col 46}{space 3}0.497{col 54}{space 4}-1.177272{col 67}{space 3} 2.423849
+{txt}{space 2}_Iexper_17 {c |}{col 14}{res}{space 2} .3378013{col 26}{space 2} .9774182{col 37}{space 1}    0.35{col 46}{space 3}0.730{col 54}{space 4}-1.579492{col 67}{space 3} 2.255094
+{txt}{space 2}_Iexper_18 {c |}{col 14}{res}{space 2}  .463389{col 26}{space 2} .9326714{col 37}{space 1}    0.50{col 46}{space 3}0.619{col 54}{space 4}-1.366129{col 67}{space 3} 2.292907
+{txt}{space 2}_Iexper_19 {c |}{col 14}{res}{space 2} .9621958{col 26}{space 2}   1.0332{col 37}{space 1}    0.93{col 46}{space 3}0.352{col 54}{space 4}-1.064518{col 67}{space 3}  2.98891
+{txt}{space 2}_Iexper_20 {c |}{col 14}{res}{space 2} 2.227288{col 26}{space 2} 1.336654{col 37}{space 1}    1.67{col 46}{space 3}0.096{col 54}{space 4}-.3946771{col 67}{space 3} 4.849253
+{txt}{space 2}_Iexper_21 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 2}_Iexper_22 {c |}{col 14}{res}{space 2} .4519854{col 26}{space 2} 1.145359{col 37}{space 1}    0.39{col 46}{space 3}0.693{col 54}{space 4}-1.794738{col 67}{space 3} 2.698708
+{txt}{space 2}_Iexper_25 {c |}{col 14}{res}{space 2}-1.493925{col 26}{space 2} 1.619782{col 37}{space 1}   -0.92{col 46}{space 3}0.357{col 54}{space 4}-4.671271{col 67}{space 3} 1.683421
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 10.01112{col 26}{space 2} 1.402772{col 37}{space 1}    7.14{col 46}{space 3}0.000{col 54}{space 4} 7.259455{col 67}{space 3} 12.76278
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. reg lwage educ exper
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}     1,500
+{txt}{hline 13}{c +}{hline 34}   F(2, 1497)      = {res}    69.18
+{txt}       Model {c |} {res} 91.2686082         2  45.6343041   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 987.555109     1,497  .659689452   {txt}R-squared       ={res}    0.0846
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0834
+{txt}       Total {c |} {res} 1078.82372     1,499  .719695609   {txt}Root MSE        =   {res} .81221
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}       lwage{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}educ {c |}{col 14}{res}{space 2} .1445348{col 26}{space 2} .0131167{col 37}{space 1}   11.02{col 46}{space 3}0.000{col 54}{space 4} .1188057{col 67}{space 3} .1702639
+{txt}{space 7}exper {c |}{col 14}{res}{space 2} .0459227{col 26}{space 2} .0093908{col 37}{space 1}    4.89{col 46}{space 3}0.000{col 54}{space 4} .0275023{col 67}{space 3} .0643432
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 7.290682{col 26}{space 2} .2475359{col 37}{space 1}   29.45{col 46}{space 3}0.000{col 54}{space 4} 6.805128{col 67}{space 3} 7.776236
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. save "C:\Users\pperkins\OneDrive - London Business School\Desktop\Metrics\PS2\PS1 (1).dta", replace
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\pperkins\OneDrive - London Business School\Desktop\Metrics\PS2\PS1 (1).dta{rm}
+saved
+{p_end}
+
+{com}. exit, clear
